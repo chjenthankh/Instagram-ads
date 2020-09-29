@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.content-text.active {
+  position: relative;
+  animation: fadein 0.5s ease-in;
+}
+.content-text {
+  /* width: 110%; */
+  z-index: 1;
+  padding: 10px;
+}
+.content-text.left {
+  /* padding: 3px 10% 3px 10%; */
+}
+.content-text.right {
+  /* padding: 3px 10% 3px 10%;
+  margin-left: -10%; */
+}
+.content-text.left.active {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.content-text.right.active {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #f09433;
+  background: -moz-linear-gradient(
+    to left,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    to left,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    to left,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px !important;
+  background-color: #666 !important;
+}
+
+.content-text.active::before {
+  content: "";
+  position: absolute;
+  left: -56px;
+  top: 0;
+  width: 16%;
+  height: 100%;
+}
+
+@media (max-width: 992px) {
+  .content-text.active {
+    font-size: 0.8rem;
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 10px;
+    margin: 0;
+  }
+  .content-text {
+    display: none;
+  }
+  .carousel-control {
+    padding: 0;
+  }
+  .carousel-control-prev {
+    left: -10% !important;
+  }
+  .carousel-control-next {
+    right: -10% !important;
+  }
+  .carousel-inner {
+    object-fit: cover;
+    max-width: 50%;
+    margin: auto;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
